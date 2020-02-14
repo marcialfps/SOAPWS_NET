@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.task1.unit03.ws/" targetNamespace="http://webservices.task1.unit03.ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="list" type="tns:list" />
+  <xs:element name="listResponse" type="tns:listResponse" />
+  <xs:element name="pieces" type="tns:pieces" />
+  <xs:element name="piecesResponse" type="tns:piecesResponse" />
+  <xs:element name="search" type="tns:search" />
+  <xs:element name="searchResponse" type="tns:searchResponse" />
+  <xs:complexType name="list">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="search">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pieces">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="piecesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:explodedPiece" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="explodedPiece">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:int" />
+      <xs:element minOccurs="0" name="pieceCode" type="xs:string" />
+      <xs:element name="volume" type="xs:double" />
+      <xs:element name="weight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

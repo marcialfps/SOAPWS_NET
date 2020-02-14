@@ -1,0 +1,50 @@
+﻿@model _WS.Unit05.Example2.Web.WSClient.ApplicationWS.Product
+
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2>Product</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visits)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

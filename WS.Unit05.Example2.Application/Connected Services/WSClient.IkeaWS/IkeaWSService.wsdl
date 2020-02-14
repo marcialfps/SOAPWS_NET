@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webservices.task1.unit03.ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="IkeaWSService" targetNamespace="http://webservices.task1.unit03.ws/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WS.Unit03.Task1/soapws/ikeaws?xsd=1" namespace="http://webservices.task1.unit03.ws/" />
+    </xsd:schema>
+  </types>
+  <message name="list">
+    <part name="parameters" element="tns:list" />
+  </message>
+  <message name="listResponse">
+    <part name="parameters" element="tns:listResponse" />
+  </message>
+  <message name="search">
+    <part name="parameters" element="tns:search" />
+  </message>
+  <message name="searchResponse">
+    <part name="parameters" element="tns:searchResponse" />
+  </message>
+  <message name="pieces">
+    <part name="parameters" element="tns:pieces" />
+  </message>
+  <message name="piecesResponse">
+    <part name="parameters" element="tns:piecesResponse" />
+  </message>
+  <portType name="IIkeaWS">
+    <operation name="list">
+      <input wsam:Action="http://webservices.task1.unit03.ws/IIkeaWS/listRequest" message="tns:list" />
+      <output wsam:Action="http://webservices.task1.unit03.ws/IIkeaWS/listResponse" message="tns:listResponse" />
+    </operation>
+    <operation name="search">
+      <input wsam:Action="http://webservices.task1.unit03.ws/IIkeaWS/searchRequest" message="tns:search" />
+      <output wsam:Action="http://webservices.task1.unit03.ws/IIkeaWS/searchResponse" message="tns:searchResponse" />
+    </operation>
+    <operation name="pieces">
+      <input wsam:Action="http://webservices.task1.unit03.ws/IIkeaWS/piecesRequest" message="tns:pieces" />
+      <output wsam:Action="http://webservices.task1.unit03.ws/IIkeaWS/piecesResponse" message="tns:piecesResponse" />
+    </operation>
+  </portType>
+  <binding name="IkeaWSPortBinding" type="tns:IIkeaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="list">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pieces">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IkeaWSService">
+    <port name="IkeaWSPort" binding="tns:IkeaWSPortBinding">
+      <soap:address location="http://localhost:8080/WS.Unit03.Task1/soapws/ikeaws" />
+    </port>
+  </service>
+</definitions>

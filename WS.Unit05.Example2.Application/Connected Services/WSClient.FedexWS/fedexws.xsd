@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.task1.unit03.ws/" targetNamespace="http://webservices.task1.unit03.ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="shipping" type="tns:shipping" />
+  <xs:element name="shippingResponse" type="tns:shippingResponse" />
+  <xs:complexType name="shipping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+      <xs:element name="arg1" type="xs:double" />
+      <xs:element name="arg2" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shippingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:shippingDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shippingDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="deadLine" type="xs:dateTime" />
+      <xs:element name="price" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
